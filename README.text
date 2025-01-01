@@ -1,0 +1,81 @@
+Whisper RLHF Workflow:
+This repository contains a workflow leveraging OpenAI's Whisper model for audio transcription, feedback collection, and reward calculation. The project is implemented using Python and provides an interactive interface using Gradio.
+
+Prerequisites
+Before running the main code, install the necessary dependencies and tools:
+Install Dependencies
+!pip install gradio openai-whisper torch pydub
+!apt-get install ffmpeg -y
+
+Main Features
+1. Audio Transcription: Converts audio files to text using Whisper.
+2. Feedback Collection: Compares automated transcription with human transcription and generates detailed feedback.
+3. Reward Calculation: Computes a similarity score between automated and human transcriptions.
+4. Model State Saving: Demonstrates saving the Whisper model's configuration and state.
+5. Interactive Interface: Provides a Gradio-based UI for seamless interaction.
+
+Usage
+Step 1: Install Dependencies
+Ensure all dependencies are installed:
+pip install -r requirements.txt
+If not using the requirements.txt file, install manually:
+pip install gradio openai-whisper torch pydub
+apt-get install ffmpeg -y
+Step 2: Run the Application
+Run the main script:
+python app.py
+Step 3: Use the Gradio Interface
+1. Upload an audio file for transcription.
+2. View the Whisper transcription.
+3. Enter human transcription for comparison.
+4. Submit feedback to see generated feedback and reward calculations.
+
+Code Overview
+Pre-Installation Code
+!pip install gradio openai-whisper torch pydub
+!apt-get install ffmpeg -y
+Main Code Highlights
+Transcription
+The transcribe_audio function processes audio files, converts them to .wav format, resamples to 16 kHz, and transcribes the content using the Whisper model.
+Feedback Collection
+The collect_feedback function compares machine and human transcriptions and highlights differences using the difflib library.
+Reward Calculation
+The calculate_reward function computes a similarity score based on the number of shared words between the machine and human transcriptions.
+Gradio Interface
+The Gradio-based UI enables:
+* Audio file upload
+* Viewing transcriptions
+* Comparing with human input
+* Submitting feedback and viewing rewards
+
+Example Workflow
+1. Upload Audio: Select an audio file.
+2. View Transcription: The Whisper model generates a transcription.
+3. Provide Feedback: Compare with human transcription and highlight differences.
+4. Calculate Reward: Get a reward score indicating transcription accuracy.
+
+Project Structure
+whisper-rlhf-workflow/
+|-- app.py               # Main application code
+|-- requirements.txt     # Dependencies
+|-- README.md            # Project documentation
+|-- LICENSE              # License information
+
+Contribution
+Step 1: Create a Branch
+Create a new branch for your feature:
+git checkout -b feature-name
+Step 2: Commit and Push
+Commit your changes and push them:
+git commit -m "Description of changes"
+git push origin feature-name
+Step 3: Submit a Pull Request
+Open a pull request in the original repository.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Credits:
+Rachit Parihar
+Shreyas Shashi Kumar Gowda
+
